@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                    http://www.springframework.org/schema/util
+                    http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+
+    <bean id="myCricketCoach" class="CricketCoach">
+        <constructor-arg value="Tom"/>
+        <constructor-arg value="tom@mail.com"/>
+        <constructor-arg ref="studentList"/>
+    </bean>
+
+    <bean id="secondCricketCoach" class="CricketCoach">
+        <property name="name" value="Vitaliy"/>
+        <property name="email" value="vitaliy@mail.com"/>
+        <property name="studentList" ref="studentList"/>
+    </bean>
+
+    <util:list id="studentList" value-type="java.lang.String">
+        <value>Mark</value>
+        <value>Poll</value>
+    </util:list>
+
+</beans>
